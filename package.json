@@ -1,0 +1,14 @@
+{
+  "name": "halab-alshahba-online",
+  "version": "5.0.0",
+  "private": true,
+  "description": "حلب الشهباء V5 — نسخة تجريبية عامة مجانية على Render",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/admin.js && node scripts/verify-build.js && node scripts/check-client-js.js",
+    "test": "python3 scripts/test_api_v4.py && python3 scripts/test_api_v5.py"
+  }
+}

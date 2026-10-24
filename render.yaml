@@ -1,0 +1,18 @@
+# Free Render demo. NO persistent disk; changes will be lost when it sleeps or redeploys.
+services:
+  - type: web
+    name: halab-alshahba-demo
+    runtime: node
+    plan: free
+    buildCommand: npm run check
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HALAB_PUBLIC_DEMO
+        value: "1"
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: AUTO_SYNC_IMAGES
+        value: "0"
